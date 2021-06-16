@@ -1,0 +1,67 @@
+<!doctype html><html lang="en">
+  <meta charset="UTF-8" />
+
+  <link rel="gist" href="https://gist.github.com/nfreear/51eaee1781e5e5c885a474432b2e1325" />
+
+  <title> Print CSS / PDF test </title>
+
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css"> -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style/app.css" />
+
+
+<header class="only-print">&#128424;<!--🖨️--> Print-only header! </header>
+
+<div class="cookie-notice"> I am a cookie notice <button> Close me! </button> </div>
+
+<main>
+  <p class="not-print">
+    <a href="./export.php?file=test.html" class="btn" target="_blank" title="New window">Export to PDF</a>
+    &middot;
+    <button id="print-button" onclick="window.print();">"Print &hellip; to PDF"</button>
+    &middot;
+    <a href="./dompdf.log.html">Log file</a>
+  </p>
+
+  <h1> Print CSS / PDF test </h1>
+
+  <p> Hello world ! <a href="https://example.org">I'm a link</a>! </p>
+
+  <p class="serif"> Entities 1: &eacute; &copy; &laquo; avoir et &ecirc;tre &alpha; &beta; </p>
+  <p> Entities 2: é © « avoir et être α β </p>
+
+  <p> Chinese? 献给母亲的爱 </p>
+
+  <p> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+  <p> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+  <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <p>Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+  <h2> New page? </h2>
+
+  <p> The <q>New page?</q> heading and this paragraph should be on a new page ... </p>
+
+  <p> <img alt="[Test SVG]" src="./assets/you-are-a-student.svg" /> </p>
+
+  <p> <img alt="[Test PNG image]" src="./assets/oj-home-board.png" /> </p>
+
+</main>
+
+
+<pre class="not-print">
+
+NDF, 15-June-2021.
+
+* https://www.flickr.com/photos/brenda-starr/5084917028;
+* https://stackoverflow.com/questions/16649943/css-to-set-a4-paper-size;
+* https://css-tricks.com/the-at-rules-of-css/
+
+* https://packagist.org/packages/barryvdh/laravel-dompdf;
+* https://github.com/dompdf/dompdf;
+* (https://npmjs.com/package/html-pdf)
+
+</pre>

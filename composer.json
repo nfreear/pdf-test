@@ -1,0 +1,15 @@
+{
+  "name": "nfreear/dompdf-test",
+
+  "support": {
+    "source": "https://github.com/nfreear/pdf-test.git"
+  },
+
+  "scripts": {
+    "serve": "php -S localhost:8009 -t src"
+  },
+
+  "require": {
+    "dompdf/dompdf": "^1.0"
+  }
+}

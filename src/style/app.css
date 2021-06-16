@@ -1,0 +1,94 @@
+/*!
+ Screen and print styles.
+*/
+
+body {
+  background-color: pink;
+  background-image: url(https://live.staticflickr.com/4111/5084917028_9d988929ac_b.jpg);
+  X-background-repeat: no-repeat;
+  X-background-position: center top;
+  background-size: cover;
+  font: 1.2rem/1.6 sans-serif;
+}
+
+body > * {
+  background: #fefefe;
+  border: .4rem solid purple;
+  color: #a00;
+  margin: 2rem auto;
+  max-width: 33rem;
+  padding: 1rem;
+}
+
+main h1 {
+  margin-top: 0;
+}
+
+pre {
+  font-size: small;
+}
+
+button,
+a.btn {
+  background: #ddd;
+  border: 1px solid #aaa;
+  border-radius: .25rem;
+  color: #222;
+  cursor: pointer;
+  font-size: medium;
+  padding: .3rem 1rem;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.only-print {
+  display: none;
+}
+
+/*!
+ Print styles.
+*/
+
+@page {
+  size: A5;
+  margin: 1.3cm;
+  marks: crop cross;
+}
+
+@media print {
+
+  .only-print {
+    display: block;
+  }
+
+  .cookie-notice,
+  .not-print {
+    display: none;
+  }
+
+  body,
+  body > * {
+    background: white;
+    color: black;
+    font: 1.1rem/1.5 serif;
+    font-family: 'Viaoda Libre', cursive, serif;
+    margin: 0 1rem;
+  }
+
+  body > * {
+    border: 1px solid #444;
+  }
+
+  h2 {
+    page-break-before: always;
+  }
+
+  img {
+    height: 5cm;
+  }
+}
