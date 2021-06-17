@@ -15,16 +15,19 @@
 
 <header role="banner" class="only-print">&#128424;<!--🖨️--> Print-only header! </header>
 
-<div class="cookie-notice"> I am a cookie notice <button> Close me! </button> </div>
+<div class="cookie-notice"> I am a cookie notice <button onclick="alert('[Dummy]')"> Close notice! </button> </div>
 
-<main role="main" class="border">
-  <p class="not-print">
+<nav class="not-print border">
+  <!-- <p> -->
     <a href="./export.php?file=test.html&lib=dompdf" class="btn" >Export to PDF</a>
     &middot;
-    <button id="print-button" onclick="window.print();">"Print &hellip; to PDF"</button>
+    <button id="print-button" onclick="window.print();"><q>Print&hellip; to PDF</q> <small>(browser)</small></button>
     &middot;
     <a href="./dompdf.log.html" title="Log for `Dompdf`">Log file</a>
-  </p>
+  <!-- </p> -->
+</nav>
+
+<main role="main" class="border">
 
   <h1> Print CSS / PDF test </h1>
 

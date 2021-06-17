@@ -11,7 +11,7 @@ const DEF_LIB = param(PDF_LIB_REGEX, null, EXP_LINK.href);
 const PDF_LIB = param(PDF_LIB_REGEX, DEF_LIB);
 
 if (PDF_LIB) {
-  EXP_LINK.href = EXP_LINK.href.replace(PDF_LIB_REGEX, `lib=${PDF_LIB}`);
+  EXP_LINK.href = EXP_LINK.href.replace(PDF_LIB_REGEX, `&lib=${PDF_LIB}`);
 }
 
 console.warn('PDF Library:', PDF_LIB, EXP_LINK.href);

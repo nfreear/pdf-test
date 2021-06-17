@@ -87,6 +87,7 @@ use Dompdf\Dompdf;
 const DOM_OPTIONS = [
   'chroot' => __DIR__,
   'defaultMediaType' => 'print',
+  'defaultFont' => 'DejaVu Serif',
   'isHtml5ParserEnabled' => true,
   'isJavascriptEnabled' => false,
   'debugKeepTemp' => true,

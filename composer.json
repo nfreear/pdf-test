@@ -1,12 +1,17 @@
 {
   "name": "nfreear/pdf-export-test",
 
+  "description": "Quickly test and compare 3 PHP PDF export libs. | © Nick Freear.",
+
+  "license": "proprietary",
+
   "support": {
     "source": "https://github.com/nfreear/pdf-test.git"
   },
 
   "scripts": {
-    "serve": "php -S localhost:8009 -t src"
+    "serve": "@php -S localhost:8009 -t src",
+    "start": "@serve"
   },
 
   "require": {
