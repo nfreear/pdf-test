@@ -1,5 +1,5 @@
 {
-  "name": "nfreear/dompdf-test",
+  "name": "nfreear/pdf-export-test",
 
   "support": {
     "source": "https://github.com/nfreear/pdf-test.git"
@@ -10,6 +10,12 @@
   },
 
   "require": {
-    "dompdf/dompdf": "^1.0"
+    "dompdf/dompdf": "^1.0",
+    "tecnickcom/tcpdf": "^6.4",
+    "mpdf/mpdf": "^8.0"
+  },
+
+  "require-dev": {
+    "monolog/monolog": "^2.2"
   }
 }

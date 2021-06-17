@@ -11,6 +11,7 @@ body {
   font: 1.2rem/1.6 sans-serif;
 }
 
+.border,
 body > * {
   background: #fefefe;
   border: .4rem solid purple;
@@ -54,11 +55,12 @@ img {
  Print styles.
 */
 
-@page {
+/* Mpdf errors on @page !! */
+/* @page {
   size: A5;
   margin: 1.3cm;
   marks: crop cross;
-}
+} */
 
 @media print {
 
@@ -80,6 +82,7 @@ img {
     margin: 0 1rem;
   }
 
+  .border,
   body > * {
     border: 1px solid #444;
   }
