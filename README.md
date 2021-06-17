@@ -1,7 +1,7 @@
 
 # pdf-test
 
-Quickly test and compare three PHP PDF export libraries:
+Quickly test three PHP PDF-export libraries, and compare with browser(s):
 
 * Dompdf :~ <https://github.com/dompdf/dompdf>;
 * TCPDF  :~ <https://github.com/tecnickcom/TCPDF>;

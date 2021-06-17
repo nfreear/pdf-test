@@ -18,15 +18,6 @@ $pdflib = filter_input(INPUT_GET, 'lib', FILTER_VALIDATE_REGEXP, [
 
 header('X-PDF-Lib:' . $pdflib);
 
-const HTML = <<<EOF
-<!doctype html>
-<style>
-  h1 { color: red; }
-</style>
-
-<h1> Hello world! </h1>
-<p><a href="https://example.org">I'm a link!</a></p>
-EOF;
 
 switch ($pdflib) {
   case 'dompdf':

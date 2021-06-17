@@ -10,8 +10,18 @@ require __DIR__ . '/../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+const HTML_SAMPLE = <<<EOF
+<!doctype html>
+<style>
+  h1 { color: red; }
+</style>
+
+<h1> Hello world! </h1>
+<p><a href="https://example.org">I'm a link!</a></p>
+EOF;
+
 /**
- * MPDF.
+ * mPDF library.
  */
 const MPDF_OPTIONS = [
   'mode' => 'utf-8',
@@ -37,7 +47,7 @@ function mPdf ($htmlFile, $cssFile = CSS_FILE) {
     }
   }); */
 
-  $mpdf->SetTitle('Example Document 01');
+  $mpdf->SetTitle('Test Document 1 (mPDF)');
   $mpdf->SetAuthor('Nick F.');
 
   $mpdf->WriteHTML($stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS);
@@ -47,7 +57,7 @@ function mPdf ($htmlFile, $cssFile = CSS_FILE) {
 }
 
 /**
- * TCPDF.
+ * TCPDF library.
  */
 const STYLE_REGEX = '@<link[^>]+(app.css)"[^>]\/?>@';
 
@@ -64,6 +74,7 @@ function tcPdf ($htmlFile, $cssFile = CSS_FILE) {
 
   $tcpdf = new \TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
+  $tcpdf->SetTitle('Test Document 1 (TCPDF)');
   $tcpdf->SetAuthor('Nick F.');
 
   // $tcpdf->SetFont('dejavusans', '', 14, '', true);
@@ -79,24 +90,25 @@ function tcPdf ($htmlFile, $cssFile = CSS_FILE) {
 }
 
 /**
- * Dompdf.
+ * Dompdf library.
  */
-
-use Dompdf\Dompdf;
-
-const DOM_OPTIONS = [
+const DOMPDF_OPTIONS = [
   'chroot' => __DIR__,
   'defaultMediaType' => 'print',
+  'defaultPaperSize' => 'A4',
+  'defaultPaperOrientation' => 'portrait',
   'defaultFont' => 'DejaVu Serif',
+  'fontDir' => __DIR__ . '/../vendor/dompdf/dompdf/lib/fonts/',
   'isHtml5ParserEnabled' => true,
-  'isJavascriptEnabled' => false,
+  'isJavascriptEnabled' => true,
   'debugKeepTemp' => true,
   'debugCss' => true,
+  'debugLayout' => true,
   'logOutputFile' => __DIR__ . '/dompdf.log.html',
 ];
 
 function domPdf ($htmlFile) {
-  $dompdf = new Dompdf(DOM_OPTIONS);
+  $dompdf = new \Dompdf\Dompdf(DOMPDF_OPTIONS);
 
   $dompdf->loadHtmlFile($htmlFile, 'UTF-8');
   // $dompdf->loadHtml('<!doctype html><html><title>hello world</title><h1>Hello</h1></html>');
